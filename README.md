@@ -2,21 +2,19 @@
 
 > Docker images including the necessary tools to deploy your apps to Firebase
 
-[![Docker Automated build](https://img.shields.io/docker/automated/kawatta/firebase-deploy.svg)](https://hub.docker.com/r/kawatta/firebase-deploy/)
-[![Docker Build Status](https://img.shields.io/docker/build/kawatta/firebase-deploy.svg)](https://hub.docker.com/r/kawatta/firebase-deploy/)
-[![Docker image size](https://img.shields.io/microbadger/image-size/kawatta/firebase-deploy.svg)](https://hub.docker.com/r/kawatta/firebase-deploy/)
-
 ## Goal
 
-This image was created to allow interacting with [Firebase](https://github.com/firebase/firebase-deploy) from a CI/CD environment (e.g. publish a website to Firebase).
+These images were created to help deploying code to [Firebase](https://github.com/firebase/firebase-deploy) from a CI/CD environment (e.g. publish a website to Firebase).
 
 ## Images
 
 ### alpine
+[![Docker image size](https://img.shields.io/microbadger/image-size/kawatta/firebase-deploy/alpine.svg)](https://hub.docker.com/r/kawatta/firebase-deploy/)
 This the recommended image if you are only using [Firebase hosting](https://firebase.google.com/docs/hosting/), for example to host a static website.
 This image uses Linux Alpine.
 
 ### stretch
+[![Docker image size](https://img.shields.io/microbadger/image-size/kawatta/firebase-deploy/stretch.svg)](https://hub.docker.com/r/kawatta/firebase-deploy/)
 This the recommended image if:
 - you are using services from Firebase other than hosting, like [Cloud functions for Firebase](https://firebase.google.com/docs/functions/).
 - your application requires building [native modules](https://nodejs.org/api/addons.html) or you need a dependency not available for [Alpine](https://pkgs.alpinelinux.org/packages?name=&branch=v3.8). 
