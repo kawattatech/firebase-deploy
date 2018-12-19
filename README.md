@@ -56,15 +56,17 @@ image: kawatta/firebase-deploy:stretch
 
 cache:
   paths:
-    - node_modules/ # caching npm modules will allow subsequent builds to run faster, if your project relies on Node 
+    - node_modules/
+    - functions/node_modules/
 
 before_script:
-  - npm install # This is only needed if you need Node to build your assets
+  - npm install
+  - cd functions && npm install && cd ..
 
 deploy-to-firebase:
   stage: deploy
   script:
-  - npm run build # Building assets
+  - npm run build
   - firebase use $FIREBASE_PROJECT --token $FIREBASE_TOKEN
   - firebase deploy -m "Build $CI_JOB_ID Commit $CI_COMMIT_SHA" --token $FIREBASE_TOKEN
   only:
